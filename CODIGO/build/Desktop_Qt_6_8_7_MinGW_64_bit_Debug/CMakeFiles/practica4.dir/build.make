@@ -82,19 +82,51 @@ CMakeFiles/practica4.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/practica4.dir/main.cpp.s"
 	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\darim\Documents\UDEA\Info2\Lab\Practica cuatro\CODIGO\main.cpp" -o CMakeFiles\practica4.dir\main.cpp.s
 
+CMakeFiles/practica4.dir/Enrutador.cpp.obj: CMakeFiles/practica4.dir/flags.make
+CMakeFiles/practica4.dir/Enrutador.cpp.obj: C:/Users/darim/Documents/UDEA/Info2/Lab/Practica\ cuatro/CODIGO/Enrutador.cpp
+CMakeFiles/practica4.dir/Enrutador.cpp.obj: CMakeFiles/practica4.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\darim\Documents\UDEA\Info2\Lab\Practica cuatro\CODIGO\build\Desktop_Qt_6_8_7_MinGW_64_bit_Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/practica4.dir/Enrutador.cpp.obj"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/practica4.dir/Enrutador.cpp.obj -MF CMakeFiles\practica4.dir\Enrutador.cpp.obj.d -o CMakeFiles\practica4.dir\Enrutador.cpp.obj -c "C:\Users\darim\Documents\UDEA\Info2\Lab\Practica cuatro\CODIGO\Enrutador.cpp"
+
+CMakeFiles/practica4.dir/Enrutador.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/practica4.dir/Enrutador.cpp.i"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\darim\Documents\UDEA\Info2\Lab\Practica cuatro\CODIGO\Enrutador.cpp" > CMakeFiles\practica4.dir\Enrutador.cpp.i
+
+CMakeFiles/practica4.dir/Enrutador.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/practica4.dir/Enrutador.cpp.s"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\darim\Documents\UDEA\Info2\Lab\Practica cuatro\CODIGO\Enrutador.cpp" -o CMakeFiles\practica4.dir\Enrutador.cpp.s
+
+CMakeFiles/practica4.dir/Red.cpp.obj: CMakeFiles/practica4.dir/flags.make
+CMakeFiles/practica4.dir/Red.cpp.obj: C:/Users/darim/Documents/UDEA/Info2/Lab/Practica\ cuatro/CODIGO/Red.cpp
+CMakeFiles/practica4.dir/Red.cpp.obj: CMakeFiles/practica4.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\darim\Documents\UDEA\Info2\Lab\Practica cuatro\CODIGO\build\Desktop_Qt_6_8_7_MinGW_64_bit_Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/practica4.dir/Red.cpp.obj"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/practica4.dir/Red.cpp.obj -MF CMakeFiles\practica4.dir\Red.cpp.obj.d -o CMakeFiles\practica4.dir\Red.cpp.obj -c "C:\Users\darim\Documents\UDEA\Info2\Lab\Practica cuatro\CODIGO\Red.cpp"
+
+CMakeFiles/practica4.dir/Red.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/practica4.dir/Red.cpp.i"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\darim\Documents\UDEA\Info2\Lab\Practica cuatro\CODIGO\Red.cpp" > CMakeFiles\practica4.dir\Red.cpp.i
+
+CMakeFiles/practica4.dir/Red.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/practica4.dir/Red.cpp.s"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\darim\Documents\UDEA\Info2\Lab\Practica cuatro\CODIGO\Red.cpp" -o CMakeFiles\practica4.dir\Red.cpp.s
+
 # Object files for target practica4
 practica4_OBJECTS = \
-"CMakeFiles/practica4.dir/main.cpp.obj"
+"CMakeFiles/practica4.dir/main.cpp.obj" \
+"CMakeFiles/practica4.dir/Enrutador.cpp.obj" \
+"CMakeFiles/practica4.dir/Red.cpp.obj"
 
 # External object files for target practica4
 practica4_EXTERNAL_OBJECTS =
 
 practica4.exe: CMakeFiles/practica4.dir/main.cpp.obj
+practica4.exe: CMakeFiles/practica4.dir/Enrutador.cpp.obj
+practica4.exe: CMakeFiles/practica4.dir/Red.cpp.obj
 practica4.exe: CMakeFiles/practica4.dir/build.make
 practica4.exe: CMakeFiles/practica4.dir/linkLibs.rsp
 practica4.exe: CMakeFiles/practica4.dir/objects1.rsp
 practica4.exe: CMakeFiles/practica4.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="C:\Users\darim\Documents\UDEA\Info2\Lab\Practica cuatro\CODIGO\build\Desktop_Qt_6_8_7_MinGW_64_bit_Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable practica4.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="C:\Users\darim\Documents\UDEA\Info2\Lab\Practica cuatro\CODIGO\build\Desktop_Qt_6_8_7_MinGW_64_bit_Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable practica4.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\practica4.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

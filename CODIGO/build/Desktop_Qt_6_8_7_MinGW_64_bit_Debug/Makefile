@@ -173,6 +173,54 @@ practica4/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\practica4.dir\build.make CMakeFiles/practica4.dir/build
 .PHONY : practica4/fast
 
+Enrutador.obj: Enrutador.cpp.obj
+.PHONY : Enrutador.obj
+
+# target to build an object file
+Enrutador.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\practica4.dir\build.make CMakeFiles/practica4.dir/Enrutador.cpp.obj
+.PHONY : Enrutador.cpp.obj
+
+Enrutador.i: Enrutador.cpp.i
+.PHONY : Enrutador.i
+
+# target to preprocess a source file
+Enrutador.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\practica4.dir\build.make CMakeFiles/practica4.dir/Enrutador.cpp.i
+.PHONY : Enrutador.cpp.i
+
+Enrutador.s: Enrutador.cpp.s
+.PHONY : Enrutador.s
+
+# target to generate assembly for a file
+Enrutador.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\practica4.dir\build.make CMakeFiles/practica4.dir/Enrutador.cpp.s
+.PHONY : Enrutador.cpp.s
+
+Red.obj: Red.cpp.obj
+.PHONY : Red.obj
+
+# target to build an object file
+Red.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\practica4.dir\build.make CMakeFiles/practica4.dir/Red.cpp.obj
+.PHONY : Red.cpp.obj
+
+Red.i: Red.cpp.i
+.PHONY : Red.i
+
+# target to preprocess a source file
+Red.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\practica4.dir\build.make CMakeFiles/practica4.dir/Red.cpp.i
+.PHONY : Red.cpp.i
+
+Red.s: Red.cpp.s
+.PHONY : Red.s
+
+# target to generate assembly for a file
+Red.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\practica4.dir\build.make CMakeFiles/practica4.dir/Red.cpp.s
+.PHONY : Red.cpp.s
+
 main.obj: main.cpp.obj
 .PHONY : main.obj
 
@@ -210,6 +258,12 @@ help:
 	@echo ... list_install_components
 	@echo ... rebuild_cache
 	@echo ... practica4
+	@echo ... Enrutador.obj
+	@echo ... Enrutador.i
+	@echo ... Enrutador.s
+	@echo ... Red.obj
+	@echo ... Red.i
+	@echo ... Red.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

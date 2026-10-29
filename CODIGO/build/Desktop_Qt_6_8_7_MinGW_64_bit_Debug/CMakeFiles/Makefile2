@@ -80,12 +80,12 @@ clean: CMakeFiles/practica4.dir/clean
 CMakeFiles/practica4.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\practica4.dir\build.make CMakeFiles/practica4.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\practica4.dir\build.make CMakeFiles/practica4.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="C:\Users\darim\Documents\UDEA\Info2\Lab\Practica cuatro\CODIGO\build\Desktop_Qt_6_8_7_MinGW_64_bit_Debug\CMakeFiles" --progress-num=1,2 "Built target practica4"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="C:\Users\darim\Documents\UDEA\Info2\Lab\Practica cuatro\CODIGO\build\Desktop_Qt_6_8_7_MinGW_64_bit_Debug\CMakeFiles" --progress-num=1,2,3,4 "Built target practica4"
 .PHONY : CMakeFiles/practica4.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/practica4.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\darim\Documents\UDEA\Info2\Lab\Practica cuatro\CODIGO\build\Desktop_Qt_6_8_7_MinGW_64_bit_Debug\CMakeFiles" 2
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\darim\Documents\UDEA\Info2\Lab\Practica cuatro\CODIGO\build\Desktop_Qt_6_8_7_MinGW_64_bit_Debug\CMakeFiles" 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/practica4.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\darim\Documents\UDEA\Info2\Lab\Practica cuatro\CODIGO\build\Desktop_Qt_6_8_7_MinGW_64_bit_Debug\CMakeFiles" 0
 .PHONY : CMakeFiles/practica4.dir/rule

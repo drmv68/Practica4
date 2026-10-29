@@ -5,7 +5,11 @@ project(practica4 LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-add_executable(practica4 main.cpp)
+add_executable(practica4
+    main.cpp
+    Enrutador.cpp
+    Red.cpp
+)
 
 include(GNUInstallDirs)
 install(TARGETS practica4
