@@ -1,34 +1,30 @@
-#pragma once
+#ifndef ENRUTADOR_H
+#define ENRUTADOR_H
+
 #include <string>
 #include <map>
-#include <iostream>
-
-using namespace std;
 
 class Enrutador {
+private:
+    std::string nombreDeLaCiudad;
+    std::map<std::string, int> vecinosConCosto;
+    std::map<std::string, int> tablaDeCostosMinimos;
+    std::map<std::string, std::string> tablaDeRutasPrevias;
 
 public:
-
-    string nombreDelEnrutador;
-
-    map<string, int> mapaDeVecinosConCosto;
-
-    map<string, int> tablaDeCostosAotrosNodos;
-
-
     Enrutador();
+    Enrutador(std::string nombre);
 
-    Enrutador(string nombre);
+    void agregarVecinoDirecto(std::string nombreDelVecino, int costoDelPeaje);
+    void eliminarVecinoDirecto(std::string nombreDelVecino);
 
-    void agregarVecino(string nombreDelVecino, int costoDelEnlace);
+    std::map<std::string, int> obtenerVecinosConCosto();
 
-    void eliminarVecino(string nombreDelVecino);
+    void actualizarTablaDeRutas(std::map<std::string, int> nuevosCostos, std::map<std::string, std::string> rutasPrevias);
 
-    void actualizarTablaDeCostos(map<string, int> nuevaTabla);
-
-    void mostrarVecinos();
-
-    void mostrarTablaDeCostos();
-
-    string obtenerNombre();
+    int consultarCostoHaciaDestino(std::string ciudadDestino);
+    void imprimirRutaPasoAPaso(std::string ciudadDestino);
+    void imprimirInformacionCompletaDelEnrutador();
 };
+
+#endif
