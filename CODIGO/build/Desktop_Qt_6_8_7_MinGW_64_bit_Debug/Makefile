@@ -221,6 +221,54 @@ Red.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\practica4.dir\build.make CMakeFiles/practica4.dir/Red.cpp.s
 .PHONY : Red.cpp.s
 
+buscarRutas.obj: buscarRutas.cpp.obj
+.PHONY : buscarRutas.obj
+
+# target to build an object file
+buscarRutas.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\practica4.dir\build.make CMakeFiles/practica4.dir/buscarRutas.cpp.obj
+.PHONY : buscarRutas.cpp.obj
+
+buscarRutas.i: buscarRutas.cpp.i
+.PHONY : buscarRutas.i
+
+# target to preprocess a source file
+buscarRutas.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\practica4.dir\build.make CMakeFiles/practica4.dir/buscarRutas.cpp.i
+.PHONY : buscarRutas.cpp.i
+
+buscarRutas.s: buscarRutas.cpp.s
+.PHONY : buscarRutas.s
+
+# target to generate assembly for a file
+buscarRutas.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\practica4.dir\build.make CMakeFiles/practica4.dir/buscarRutas.cpp.s
+.PHONY : buscarRutas.cpp.s
+
+leerArchivos.obj: leerArchivos.cpp.obj
+.PHONY : leerArchivos.obj
+
+# target to build an object file
+leerArchivos.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\practica4.dir\build.make CMakeFiles/practica4.dir/leerArchivos.cpp.obj
+.PHONY : leerArchivos.cpp.obj
+
+leerArchivos.i: leerArchivos.cpp.i
+.PHONY : leerArchivos.i
+
+# target to preprocess a source file
+leerArchivos.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\practica4.dir\build.make CMakeFiles/practica4.dir/leerArchivos.cpp.i
+.PHONY : leerArchivos.cpp.i
+
+leerArchivos.s: leerArchivos.cpp.s
+.PHONY : leerArchivos.s
+
+# target to generate assembly for a file
+leerArchivos.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\practica4.dir\build.make CMakeFiles/practica4.dir/leerArchivos.cpp.s
+.PHONY : leerArchivos.cpp.s
+
 main.obj: main.cpp.obj
 .PHONY : main.obj
 
@@ -264,6 +312,12 @@ help:
 	@echo ... Red.obj
 	@echo ... Red.i
 	@echo ... Red.s
+	@echo ... buscarRutas.obj
+	@echo ... buscarRutas.i
+	@echo ... buscarRutas.s
+	@echo ... leerArchivos.obj
+	@echo ... leerArchivos.i
+	@echo ... leerArchivos.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

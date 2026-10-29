@@ -9,6 +9,10 @@ add_executable(practica4
     main.cpp
     Enrutador.cpp
     Red.cpp
+    leerArchivos.h
+    leerArchivos.cpp
+    buscarRutas.h
+    buscarRutas.cpp
 )
 
 include(GNUInstallDirs)

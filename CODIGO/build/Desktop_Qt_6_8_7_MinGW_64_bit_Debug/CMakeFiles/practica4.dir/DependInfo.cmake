@@ -10,6 +10,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/darim/Documents/UDEA/Info2/Lab/Practica cuatro/CODIGO/Enrutador.cpp" "CMakeFiles/practica4.dir/Enrutador.cpp.obj" "gcc" "CMakeFiles/practica4.dir/Enrutador.cpp.obj.d"
   "C:/Users/darim/Documents/UDEA/Info2/Lab/Practica cuatro/CODIGO/Red.cpp" "CMakeFiles/practica4.dir/Red.cpp.obj" "gcc" "CMakeFiles/practica4.dir/Red.cpp.obj.d"
+  "C:/Users/darim/Documents/UDEA/Info2/Lab/Practica cuatro/CODIGO/buscarRutas.cpp" "CMakeFiles/practica4.dir/buscarRutas.cpp.obj" "gcc" "CMakeFiles/practica4.dir/buscarRutas.cpp.obj.d"
+  "C:/Users/darim/Documents/UDEA/Info2/Lab/Practica cuatro/CODIGO/leerArchivos.cpp" "CMakeFiles/practica4.dir/leerArchivos.cpp.obj" "gcc" "CMakeFiles/practica4.dir/leerArchivos.cpp.obj.d"
   "C:/Users/darim/Documents/UDEA/Info2/Lab/Practica cuatro/CODIGO/main.cpp" "CMakeFiles/practica4.dir/main.cpp.obj" "gcc" "CMakeFiles/practica4.dir/main.cpp.obj.d"
   )
 
