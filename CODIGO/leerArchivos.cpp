@@ -1,4 +1,4 @@
-#include "LectorDeArchivos.h"
+#include "leerArchivos.h"
 #include "Red.h"
 #include <fstream>
 #include <iostream>

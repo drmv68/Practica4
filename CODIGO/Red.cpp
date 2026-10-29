@@ -1,5 +1,5 @@
 #include "Red.h"
-#include "BuscadorDeRutas.h"
+#include "buscarRutas.h"
 #include <iostream>
 
 using namespace std;
