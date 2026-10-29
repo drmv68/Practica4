@@ -1,9 +1,6 @@
 #include "Red.h"
+#include "BuscadorDeRutas.h"
 #include <iostream>
-#include <fstream>
-#include <queue>
-#include <limits>
-#include <algorithm>
 
 using namespace std;
 
@@ -26,11 +23,11 @@ bool Red::removerEnrutador(string nombreDeLaCiudad) {
         return false;
     }
 
-    map<string, int> vecinosDelNodoAEliminar = enrutadoresEnElSistema[nombreDeLaCiudad].obtenerVecinosConCosto();
+    map<string, int> vecinosAfectados = enrutadoresEnElSistema[nombreDeLaCiudad].obtenerVecinosConCosto();
 
-    for (auto iterador = vecinosDelNodoAEliminar.begin(); iterador != vecinosDelNodoAEliminar.end(); iterador++) {
-        string nombreDelVecino = iterador->first;
-        enrutadoresEnElSistema[nombreDelVecino].eliminarVecinoDirecto(nombreDeLaCiudad);
+    for (auto iterador = vecinosAfectados.begin(); iterador != vecinosAfectados.end(); iterador++) {
+        string vecino = iterador->first;
+        enrutadoresEnElSistema[vecino].eliminarVecinoDirecto(nombreDeLaCiudad);
     }
 
     enrutadoresEnElSistema.erase(nombreDeLaCiudad);
@@ -64,73 +61,10 @@ bool Red::desconectarEnrutadores(string ciudadOrigen, string ciudadDestino) {
     return true;
 }
 
-void Red::cargarTopologiaDesdeArchivo(string nombreDelArchivo) {
-    ifstream archivoDeTexto(nombreDelArchivo);
-
-    if (!archivoDeTexto.is_open()) {
-        cout << "No se pudo abrir el archivo: " << nombreDelArchivo << endl;
-        return;
-    }
-
-    string origen, destino;
-    int costo;
-
-    while (archivoDeTexto >> origen >> destino >> costo) {
-        agregarNuevoEnrutador(origen);
-        agregarNuevoEnrutador(destino);
-        conectarEnrutadores(origen, destino, costo);
-    }
-
-    archivoDeTexto.close();
-    huboCambiosEnLaRed = true;
-}
-
-void Red::ejecutarAlgoritmoDijkstra(string ciudadOrigen) {
-    map<string, int> costosMinimos;
-    map<string, string> nodoAnteriorParaRuta;
-    priority_queue<pair<int, string>, vector<pair<int, string>>, greater<pair<int, string>>> colaDePrioridad;
-
-    int infinito = numeric_limits<int>::max();
-
-    for (auto iterador = enrutadoresEnElSistema.begin(); iterador != enrutadoresEnElSistema.end(); iterador++) {
-        costosMinimos[iterador->first] = infinito;
-    }
-
-    costosMinimos[ciudadOrigen] = 0;
-    colaDePrioridad.push({0, ciudadOrigen});
-
-    while (!colaDePrioridad.empty()) {
-        int costoAcumuladoActual = colaDePrioridad.top().first;
-        string ciudadActual = colaDePrioridad.top().second;
-        colaDePrioridad.pop();
-
-        if (costoAcumuladoActual > costosMinimos[ciudadActual]) {
-            continue;
-        }
-
-        map<string, int> vecinosDeCiudadActual = enrutadoresEnElSistema[ciudadActual].obtenerVecinosConCosto();
-
-        for (auto iterador = vecinosDeCiudadActual.begin(); iterador != vecinosDeCiudadActual.end(); iterador++) {
-            string ciudadVecina = iterador->first;
-            int costoDelPeajeHaciaVecino = iterador->second;
-
-            int nuevoCostoCalculado = costoAcumuladoActual + costoDelPeajeHaciaVecino;
-
-            if (nuevoCostoCalculado < costosMinimos[ciudadVecina]) {
-                costosMinimos[ciudadVecina] = nuevoCostoCalculado;
-                nodoAnteriorParaRuta[ciudadVecina] = ciudadActual;
-                colaDePrioridad.push({nuevoCostoCalculado, ciudadVecina});
-            }
-        }
-    }
-
-    enrutadoresEnElSistema[ciudadOrigen].actualizarTablaDeRutas(costosMinimos, nodoAnteriorParaRuta);
-}
-
-void Red::actualizarTablasSiEsNecesario() {
+void Red::sincronizarTodasLasTablas() {
     if (huboCambiosEnLaRed) {
         for (auto iterador = enrutadoresEnElSistema.begin(); iterador != enrutadoresEnElSistema.end(); iterador++) {
-            ejecutarAlgoritmoDijkstra(iterador->first);
+            BuscadorDeRutas::calcularDijkstra(iterador->first, enrutadoresEnElSistema);
         }
         huboCambiosEnLaRed = false;
     }
@@ -139,30 +73,29 @@ void Red::actualizarTablasSiEsNecesario() {
 void Red::consultarRutaYCosto(string ciudadOrigen, string ciudadDestino) {
     if (enrutadoresEnElSistema.find(ciudadOrigen) == enrutadoresEnElSistema.end() ||
         enrutadoresEnElSistema.find(ciudadDestino) == enrutadoresEnElSistema.end()) {
-        cout << "Error: Alguna de las ciudades no existe en la red." << endl;
+        cout << "Error: Alguna ciudad no existe." << endl;
         return;
     }
 
-    actualizarTablasSiEsNecesario();
+    sincronizarTodasLasTablas();
 
     int costoFinal = enrutadoresEnElSistema[ciudadOrigen].consultarCostoHaciaDestino(ciudadDestino);
 
-    if (costoFinal == numeric_limits<int>::max()) {
-        cout << "No existe un camino posible desde " << ciudadOrigen << " hasta " << ciudadDestino << endl;
+    if (costoFinal >= 999999) {
+        cout << "No hay camino posible desde " << ciudadOrigen << " hasta " << ciudadDestino << endl;
         return;
     }
 
-    cout << "El costo minimo desde " << ciudadOrigen << " hasta " << ciudadDestino << " es: " << costoFinal << endl;
-    cout << "Ruta optima: ";
+    cout << "Costo de viaje de " << ciudadOrigen << " a " << ciudadDestino << ": " << costoFinal << endl;
     enrutadoresEnElSistema[ciudadOrigen].imprimirRutaPasoAPaso(ciudadDestino);
 }
 
-void Red::imprimirEstadoDeLaRed() {
-    actualizarTablasSiEsNecesario();
+void Red::imprimirEstadoDelSistema() {
+    sincronizarTodasLasTablas();
 
-    cout << "\n=== ESTADO COMPLETO DE LA RED ===" << endl;
+    cout << "\n=== ESTADO DE LA RED ===" << endl;
     for (auto iterador = enrutadoresEnElSistema.begin(); iterador != enrutadoresEnElSistema.end(); iterador++) {
         iterador->second.imprimirInformacionCompletaDelEnrutador();
     }
-    cout << "=================================\n" << endl;
+    cout << "========================\n" << endl;
 }

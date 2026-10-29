@@ -1,24 +1,27 @@
-#pragma once
+#ifndef RED_H
+#define RED_H
+
 #include <string>
 #include <map>
 #include "Enrutador.h"
 
-using namespace std;
-
 class Red {
+private:
+    std::map<std::string, Enrutador> enrutadoresEnElSistema;
+    bool huboCambiosEnLaRed;
+
+    void sincronizarTodasLasTablas();
 
 public:
+    Red();
 
-    map<string, Enrutador> mapaDeEnrutadores;
+    bool agregarNuevoEnrutador(std::string nombreDeLaCiudad);
+    bool removerEnrutador(std::string nombreDeLaCiudad);
+    bool conectarEnrutadores(std::string ciudadOrigen, std::string ciudadDestino, int costoDelPeaje);
+    bool desconectarEnrutadores(std::string ciudadOrigen, std::string ciudadDestino);
 
-
-    void agregarEnrutador(string nombreDelEnrutador);
-
-    void eliminarEnrutador(string nombreDelEnrutador);
-
-    void crearEnlaceEntreEnrutadores(string nombreOrigen, string nombreDestino, int costoDelEnlace);
-
-    void eliminarEnlaceEntreEnrutadores(string nombreOrigen, string nombreDestino);
-
-    void mostrarTodaLaRed();
+    void consultarRutaYCosto(std::string ciudadOrigen, std::string ciudadDestino);
+    void imprimirEstadoDelSistema();
 };
+
+#endif
